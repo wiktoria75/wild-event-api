@@ -3,12 +3,12 @@
  Our project is already deployed, you can see it here: 
  
  1. [Backoffice](http://wildeventmanager.com/) - login: admin@wildeventmanager.com | password: WildEvent2023
- 2. [Clients app](http://wildevent.com.pl/) - designed for mobile devices
+ 2. [Client app](http://wildevent.com.pl/) - designed for mobile devices
 
 Here you can find other repositories for this project: 
 
  1. [Backoffice](https://github.com/wiktoria75/wild-event-backoffice)
- 2. [Clients app](https://github.com/wiktoria75/wild-event-client-app)
+ 2. [Client app](https://github.com/wiktoria75/wild-event-client-app)
 
 ## 🌟 Project aim
 
