@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "b8c51830-0593-4710-9afd-ecfc0098e225",
+		"name": "Security",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25583089",
+		"_collection_link": "https://grey-zodiac-654015.postman.co/workspace/New-Team-Workspace~6b7ebb3b-f5b3-41e0-81ee-7368472c4ab7/collection/25583089-b8c51830-0593-4710-9afd-ecfc0098e225?action=share&source=collection_link&creator=25583089"
+	},
+	"item": [
+		{
+			"name": "RegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"test\",\n  \"email\": \"mgl4153@wp.pl\",\n  \"phone\": \"123456789\",\n  \"locationIds\": [\"36317681-9c3c-434c-9ea4-055a1f127e0a\"],\n  \"roleIds\": [\"7b75ac6f-5c91-4f4d-b6c2-694b71f63215\", \"ddb98ed3-0765-4c70-9d02-2be7d18d86d2\", \"e8f461a2-82c4-4d1c-9c0b-aa61f1b3c786\", \"3a9c8e47-ea25-4322-9d7f-b0f48c349ce5\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}{{SECURITY_REGISTER}}",
+					"host": [
+						"{{URL}}{{SECURITY_REGISTER}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ResetPasswordAfterRegisterUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVzZXRfcGFzc3dvcmQiLCJzdWIiOiJleGFtcGxlQHRlc3QuY29tIiwiaWF0IjoxNjk1MTIzNjE3LCJleHAiOjE2OTUxMjQ1MTd9.KCDsNb4oILm_YGoUnxk6K1FiETkuSwhsl_tXcKxcw3k\",\n    \"newPassword\": \"newPassword123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}{{SECURITY_RESET_PASSWORD}}",
+					"host": [
+						"{{URL}}{{SECURITY_RESET_PASSWORD}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"test@example.com\",\n    \"password\": \"newPassword123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}{{SECURITY_AUTHENTICATE}}",
+					"host": [
+						"{{URL}}{{SECURITY_AUTHENTICATE}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GenerateResetLinkOnUserRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"donjzl18@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}{{SECURITY_RESET_LINK}}",
+					"host": [
+						"{{URL}}{{SECURITY_RESET_LINK}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

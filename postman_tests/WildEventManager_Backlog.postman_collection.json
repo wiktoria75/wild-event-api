@@ -1,0 +1,331 @@
+{
+	"info": {
+		"_postman_id": "97a021db-037f-458d-a452-742a1059630b",
+		"name": "WildEventManager_Backlog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25583089",
+		"_collection_link": "https://grey-zodiac-654015.postman.co/workspace/New-Team-Workspace~6b7ebb3b-f5b3-41e0-81ee-7368472c4ab7/collection/25595521-97a021db-037f-458d-a452-742a1059630b?action=share&source=collection_link&creator=25583089"
+	},
+	"item": [
+		{
+			"name": "event",
+			"item": [
+				{
+					"name": "Add new event",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Summer Safari\",\r\n    \"description\": \"Join us for an exciting safari adventure in the heart of the jungle.\",\r\n    \"dateRange\": {\r\n        \"startsAt\": \"2023-09-24T10:00:00\",\r\n        \"endsAt\": \"2023-09-24T12:00:00\"\r\n    },\r\n    \"openToPublic\": true,\r\n    \"locationId\": \"36317681-9c3c-434c-9ea4-055a1f127e0a\",\r\n    \"organizers\": [\"7c9e6679-7425-40de-944b-e07fc1f90ae7\",\"f47ac10b-58cc-4372-a567-0e02b2c3d479\", \"7638419a-7a9f-4dca-a9ba-e1a5f0ebef62\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{EVENT_MANAGEMENT}}",
+							"host": [
+								"{{URL}}{{EVENT_MANAGEMENT}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{EVENT_MANAGEMENT}}",
+							"host": [
+								"{{URL}}{{EVENT_MANAGEMENT}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Summer Safari\",\r\n    \"description\": \"Join us for an exciting safari adventure in the heart of the jungle.\",\r\n    \"dateRange\": {\r\n        \"startsAt\": \"2023-09-24T10:00:00\",\r\n        \"endsAt\": \"2023-09-24T12:00:00\"\r\n    },\r\n    \"openToPublic\": true,\r\n    \"locationId\": \"36317681-9c3c-434c-9ea4-055a1f127e0a\",\r\n    \"organizers\": [\"7c9e6679-7425-40de-944b-e07fc1f90ae7\",\"f47ac10b-58cc-4372-a567-0e02b2c3d479\", \"7638419a-7a9f-4dca-a9ba-e1a5f0ebef62\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{EVENT_MANAGEMENT}}/b3568810-597a-4384-b8ba-88c8d588945a",
+							"host": [
+								"{{URL}}{{EVENT_MANAGEMENT}}"
+							],
+							"path": [
+								"b3568810-597a-4384-b8ba-88c8d588945a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{EVENT_MANAGEMENT}}/b3568810-597a-4384-b8ba-88c8d588945a",
+							"host": [
+								"{{URL}}{{EVENT_MANAGEMENT}}"
+							],
+							"path": [
+								"b3568810-597a-4384-b8ba-88c8d588945a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "location",
+			"item": [
+				{
+					"name": "getAllLocations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{AUTH_LOCATIONS_URL}}",
+							"host": [
+								"{{URL}}{{AUTH_LOCATIONS_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "submitLocation",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"id\":null,\"title\":\"Bird Cages\",\"description\":\"Lorem Ipsum\",\"longitude\":21.02139763352966,\"latitude\":52.25913513255949}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{MAP_CONFIG_LOCATION_URL}}",
+							"host": [
+								"{{URL}}{{MAP_CONFIG_LOCATION_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}{MAP_CONFIG_LOCATION_URL}}/1e7d580d-659a-45c6-918e-067e7f5920f6",
+							"host": [
+								"{{URL}{MAP_CONFIG_LOCATION_URL}}"
+							],
+							"path": [
+								"1e7d580d-659a-45c6-918e-067e7f5920f6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "role",
+			"item": [
+				{
+					"name": "getAllRoles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{AUTH_ROLES_URL}}",
+							"host": [
+								"{{URL}}{{AUTH_ROLES_URL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Test\",\n    \"email\": \"53w5@gmail.com\",\n    \"phone\": \"123456789\",\n    \"locationIds\": [\"cbbf67d6-d77f-40e2-9447-df28e4f8d4d0\"],\n    \"roleIds\": [\"7b75ac6f-5c91-4f4d-b6c2-694b71f63215\"]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{STAFF_MANAGEMENT_ACTIVE_STAFF_URL}}",
+							"host": [
+								"{{URL}}{{STAFF_MANAGEMENT_ACTIVE_STAFF_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserNameID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{USER_NAMES_ID_URL}}",
+							"host": [
+								"{{URL}}{{USER_NAMES_ID_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"New Name\",\n    \"email\": \"new@email.com\",\n    \"phone\": \"123456789\",\n    \"locationIds\": [],\n    \"roleIds\": []\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{STAFF_MANAGEMENT_ACTIVE_STAFF_URL}}/f47ac10b-58cc-4372-a567-0e02b2c3d479",
+							"host": [
+								"{{URL}}{{STAFF_MANAGEMENT_ACTIVE_STAFF_URL}}"
+							],
+							"path": [
+								"f47ac10b-58cc-4372-a567-0e02b2c3d479"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deactivateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{STAFF_MANAGEMENT_DEACTIVE_STAFF_URL}}/f47ac10b-58cc-4372-a567-0e02b2c3d479",
+							"host": [
+								"{{URL}}{{STAFF_MANAGEMENT_DEACTIVE_STAFF_URL}}"
+							],
+							"path": [
+								"f47ac10b-58cc-4372-a567-0e02b2c3d479"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "myEvent",
+			"item": [
+				{
+					"name": "Get my events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{MY_EVENTS}}",
+							"host": [
+								"{{URL}}{{MY_EVENTS}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "map",
+			"item": [
+				{
+					"name": "authMap",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{AUTH_MAP_URL}}",
+							"host": [
+								"{{URL}}{{AUTH_MAP_URL}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changeMap",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"latitude\":52.25848370860629,\"longitude\":21.022308848553877,\"zoom\":14.397854866937777,\"bearing\":-33}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{MAP_CONFIG_MAP_URL}}",
+							"host": [
+								"{{URL}}{{MAP_CONFIG_MAP_URL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

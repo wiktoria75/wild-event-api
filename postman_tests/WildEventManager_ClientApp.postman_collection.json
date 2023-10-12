@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "f16adef4-d322-4d8d-a521-79a53b7326b6",
+		"name": "WildEventManager_ClientApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25583089",
+		"_collection_link": "https://grey-zodiac-654015.postman.co/workspace/New-Team-Workspace~6b7ebb3b-f5b3-41e0-81ee-7368472c4ab7/collection/25595521-f16adef4-d322-4d8d-a521-79a53b7326b6?action=share&source=collection_link&creator=25583089"
+	},
+	"item": [
+		{
+			"name": "event",
+			"item": [
+				{
+					"name": "GetEventByID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{NO_AUTH_EVENT_URL}}/e0c43b5a-1a79-4324-86b2-b91b3496c22b",
+							"host": [
+								"{{URL}}{{NO_AUTH_EVENT_URL}}"
+							],
+							"path": [
+								"e0c43b5a-1a79-4324-86b2-b91b3496c22b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllEvents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{EVENT_MANAGEMENT}}",
+							"host": [
+								"{{URL}}{{EVENT_MANAGEMENT}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTodayEvents",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response should be an array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(Array.isArray(jsonData)).to.eql(true);",
+									"});",
+									"",
+									"pm.test(\"Every item should have required fields\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData.forEach(function(item) {",
+									"        pm.expect(item).to.have.property('title');",
+									"        pm.expect(item).to.have.property('startsAt');",
+									"        pm.expect(item).to.have.property('location');",
+									"    });",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{NO_AUTH_EVENT_URL_TODAY}}",
+							"host": [
+								"{{URL}}{{NO_AUTH_EVENT_URL_TODAY}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddNewEvent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{EVENT_MANAGEMENT}}",
+							"host": [
+								"{{URL}}{{EVENT_MANAGEMENT}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{EVENT_MANAGEMENT}}/b3568810-597a-4384-b8ba-88c8d588945a",
+							"host": [
+								"{{URL}}{{EVENT_MANAGEMENT}}"
+							],
+							"path": [
+								"b3568810-597a-4384-b8ba-88c8d588945a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "map",
+			"item": [
+				{
+					"name": "GetMap",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{NO_AUTH_MAP_URL}}",
+							"host": [
+								"{{URL}}{{NO_AUTH_MAP_URL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "location",
+			"item": [
+				{
+					"name": "GetLocationById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{NO_AUTH_LOCATION_URL}}/e6f29eb9-9c50-44c1-8ebc-1dced4d12c09",
+							"host": [
+								"{{URL}}{{NO_AUTH_LOCATION_URL}}"
+							],
+							"path": [
+								"e6f29eb9-9c50-44c1-8ebc-1dced4d12c09"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetLocations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{NO_AUTH_LOCATION_URL}}",
+							"host": [
+								"{{URL}}{{NO_AUTH_LOCATION_URL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
